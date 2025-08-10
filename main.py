@@ -51,6 +51,11 @@ def main():
                 print("Collision Detected, Game Over!")
                 raise SystemExit
 
+            for shot in shots:
+                if asteroid.hasCollided(shot):
+                    asteroid.split()
+                    shot.kill()
+
         dt = clock.tick(60) / 1000
         
         #call this last
